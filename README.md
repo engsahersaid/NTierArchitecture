@@ -1,0 +1,56 @@
+# N-Tier Architecture
+
+N-Tier Architecture is a software architecture pattern that separates an application into multiple layers or tiers. Each tier has a specific responsibility and communicates with the next tier to achieve the desired functionality.
+
+Layers or Tiers is just a physical and logical separation of concerns, it is often referred to as n-tiered application where n is the number of separations.
+
+
+## Layers
+
+The Most common layers number 3 layers:
+
+1. Presentation Layer
+2. Business Logic Layer
+3. Data Access Layer
+4. Model Layer Optional
+
+
+the presentation layer depends on business logic layer, which in turn depends on the data access layer and so on.
+
+### Presentation Layer
+
+The presentation layer is responsible for handling user input and displaying data to the user. This layer is typically implemented using a web framework or a GUI library.
+
+- This uses MVC (Model-View-Controller) pattern and holds Presentation layer logic. For Models, it uses Model layer objects.
+
+### Business Logic Layer
+
+The business logic layer is responsible for implementing the application's logic and rules. This layer is typically implemented using a programming language such as Java or C#.
+
+- It holds the Application logic. Application layer call methods of Repository layer for CRUD operations. Repository layer returns the data in Domain layer Entities. Application layer performs an additional logic and returns the data in Model objects to the Web layer.
+- Model is shared between Application and Web layer. Application layer returns the data in Model objects to the Web layer.
+
+### Data Access Layer
+
+The data access layer is responsible for interacting with the database or data storage system. This layer is typically implemented using an ORM (Object-Relational Mapping) tool or a database library.
+
+Database is usually the Core of the Entire Application.
+It is the only layer that doesn’t have to depend on anything else. Any small change in the Business Logics layer or Data access layer may prove dangerous to the integrity of the entire application.
+
+- **Domain** It holds Entity Framework Context and Entities created using Code First from database approach.
+- **Repository** It holds code for CRUD operations, using Generic Repository and Unit-of-Work patterns.
+
+### Model Layer 
+
+Contains DB Entiteis and shared model in the application 
+
+## Used Technologies
+
+- C#
+- Asp.net Web Api Core 8
+- Swagger
+- Entity Framework Core 8
+- AutoMapper
+- Fluent Api
+- Fluent Validation 
+

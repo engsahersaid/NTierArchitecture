@@ -49,7 +49,7 @@ Contains DB Entities and shared model in the application
 ## Used Technologies
 
 - C#
-- Asp.net Web Api Core 8
+- Asp.net Core 8
 - Swagger
 - Entity Framework Core 8 Code Frist
 - AutoMapper
